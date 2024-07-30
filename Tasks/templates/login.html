@@ -1,12 +1,12 @@
 {% extends './layouts/nav.html' %} {% block content %}
 
-<h1>Signup</h1>
+<h1>Log In</h1>
 
 {{ error }}
 
-<form action="/sign_up/" method="post">
+<form action="/log_in/" method="post">
   {% csrf_token %} {{ form.as_p }}
-  <button>Save</button>
+  <button>Log In</button>
 </form>
 
 {% endblock %}
