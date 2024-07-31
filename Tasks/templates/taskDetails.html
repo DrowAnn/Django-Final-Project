@@ -1,0 +1,26 @@
+{% extends './layouts/nav.html' %} {% block content %}
+
+<h1>Task Details</h1>
+
+<ul>
+  <li>
+    <h1>{{ task.title }}</h1>
+    <p>{{ task.createdDate }}</p>
+    <p>{{ task.description }}</p>
+    <p>{{ task.important }}</p>
+    <p>{{ task.completed }}</p>
+    <p>{{ task.completedDate }}</p>
+    <h3>Created by {{ task.user.username }}</h3>
+    <form action="{% url 'tasksCompleteTask' task.id %}" method="post">
+      {% csrf_token %}
+      <button>Complete</button>
+    </form>
+    <form action="{% url 'tasksDeleteTask' task.id %}" method="post">
+      {% csrf_token %}
+      <button>Delete</button>
+    </form>
+    <a href="{% url 'tasksTasks' %}">Back to Tasks</a>
+  </li>
+</ul>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends './layouts/nav.html' %} {% block content %}
+
+<h1>Update Task</h1>
+
+<h3>{{ error }}</h3>
+
+<form method="post">
+  {% csrf_token %} {{ form.as_p }}
+  <button>Update</button>
+</form>
+
+{% endblock %}

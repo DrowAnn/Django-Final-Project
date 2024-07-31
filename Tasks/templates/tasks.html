@@ -16,7 +16,10 @@
       {% endif %}
     </h3>
     <p>{{ task.description }}</p>
+    <p>{{ task.completed }}</p>
     <p>Created by {{ task.user.username }}</p>
+    <a href="{% url 'tasksTaskDetails' task.id %}">See Details</a>
+    <a href="{% url 'tasksUpdateTask' task.id %}">Update</a>
   </li>
 
   {% endfor %}

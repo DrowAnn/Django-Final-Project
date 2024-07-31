@@ -11,24 +11,30 @@
         <li>
           <a href="/">Home</a>
         </li>
+        <li>
+          <a href="{% url 'tasksTasks' %}">Tasks</a>
+        </li>
+        <li>
+          <a href="{% url 'tasksCompletedTasksList' %}">Completed Tasks</a>
+        </li>
+        <li>
+          <a href="{% url 'tasksPendingTasksList' %}">Pending Tasks</a>
+        </li>
+        <li>
+          <a href="{% url 'tasksCreateTask' %}">Create Tasks</a>
+        </li>
         {% if user.is_authenticated %}
         <li>
-          <a href="/log_out/">Log Out</a>
+          <a href="{% url 'tasksLogout' %}">Log Out</a>
         </li>
         {% else %}
         <li>
-          <a href="/sign_up/">Sign Up</a>
+          <a href="{% url 'tasksSignup' %}">Sign Up</a>
         </li>
         <li>
-          <a href="/log_in/">Log In</a>
+          <a href="{% url 'tasksLogin' %}">Log In</a>
         </li>
         {% endif %}
-        <li>
-          <a href="/tasks/">Tasks</a>
-        </li>
-        <li>
-          <a href="/tasks/create/">Create Tasks</a>
-        </li>
       </ul>
     </nav>
     {% block content %} {% endblock %}
