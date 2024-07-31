@@ -3,6 +3,8 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
 from django.http import HttpResponse
+from .forms import createTaskForm
+from .models import Task
 
 # Create your views here.
 
@@ -48,4 +50,19 @@ def log_out(request):
 
 
 def tasks(request):
-    return render(request, 'tasks.html')
+    tasksList = Task.objects.filter(user=request.user)
+    return render(request, 'tasks.html', {'tasks': tasksList})
+
+
+def createTask(request):
+    if (request.method == "POST"):
+        try:
+            form = createTaskForm(request.POST)
+            newTask = form.save(commit=False)
+            newTask.user = request.user
+            newTask.save()
+            return redirect('tasksTasks')
+        except:
+            return render(request, 'createTask.html', {'form': createTaskForm, 'error': 'Please provide valid data'})
+    else:
+        return render(request, 'createTask.html', {'form': createTaskForm})

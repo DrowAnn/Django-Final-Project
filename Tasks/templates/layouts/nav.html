@@ -9,7 +9,7 @@
     <nav>
       <ul>
         <li>
-          <a href="/home/">Home</a>
+          <a href="/">Home</a>
         </li>
         {% if user.is_authenticated %}
         <li>
@@ -25,6 +25,9 @@
         {% endif %}
         <li>
           <a href="/tasks/">Tasks</a>
+        </li>
+        <li>
+          <a href="/tasks/create/">Create Tasks</a>
         </li>
       </ul>
     </nav>

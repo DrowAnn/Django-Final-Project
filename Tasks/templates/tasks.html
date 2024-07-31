@@ -2,4 +2,24 @@
 
 <h1>Tasks</h1>
 
+<ul>
+  {% for task in tasks %}
+
+  <li>
+    <h3>
+      {% if task.important == True %}
+      <h1>{{ task.title }} 🔴</h1>
+      {% elif task.important == False %}
+      <h1>{{ task.title }} 🟡</h1>
+      {% else %}
+      <h1>{{ task.title }} - Undefined Importance</h1>
+      {% endif %}
+    </h3>
+    <p>{{ task.description }}</p>
+    <p>Created by {{ task.user.username }}</p>
+  </li>
+
+  {% endfor %}
+</ul>
+
 {% endblock %}
