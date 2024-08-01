@@ -1,10 +1,9 @@
 {% extends './layouts/nav.html' %} {% block content %}
 
-<h1>Signup</h1>
-
-{{ error }}
+<h1>Sign Up</h1>
 
 <form action="/sign_up/" method="post">
+  <h3>{{ error }}</h3>
   {% csrf_token %} {{ form.as_p }}
   <button>Save</button>
 </form>

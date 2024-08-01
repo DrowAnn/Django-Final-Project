@@ -1,0 +1,190 @@
+body {
+  background-color: #202020;
+  display: flex;
+  flex-direction: column;
+}
+
+.lorem {
+  padding: 0 10vw;
+  color: white;
+  text-align: justify;
+}
+
+nav {
+  background-color: #404040;
+  width: 95vw;
+  display: flex;
+  align-self: center;
+  margin-top: 1vh;
+}
+
+nav ul {
+  width: 95vw;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+
+nav li {
+  list-style: none;
+  padding: 1vh 0vw;
+  border-left: solid #202020 1px;
+}
+
+nav li:hover {
+  background-color: whitesmoke;
+  color: #202020;
+}
+
+nav a {
+  font-size: large;
+  text-decoration: none;
+  color: whitesmoke;
+  padding: 1vh 1vw;
+}
+
+nav a:hover {
+  color: #202020;
+}
+
+h1 {
+  text-align: center;
+  color: whitesmoke;
+}
+
+.tasksList {
+  display: flex;
+  flex-direction: row;
+  margin: 0 10vw;
+  width: 80vw;
+}
+
+.taskCard {
+  width: 16vw;
+  margin: 1vw;
+  padding: 0 1vw;
+  padding-bottom: 2.5vh;
+  border-radius: 20px;
+  background-color: whitesmoke;
+}
+
+.taskCard:hover {
+  box-shadow: rgb(185, 47, 219) 0px 0px 8px 8px;
+}
+
+.taskCard h2 {
+  text-align: center;
+}
+
+.taskCard a {
+  font-size: medium;
+  text-decoration: none;
+  color: whitesmoke;
+  padding: 1vh 1vw;
+  background-color: #202020;
+  border-radius: 10px;
+}
+
+.taskCard a:hover {
+  background-color: #404040;
+  color: whitesmoke;
+}
+
+.taskDetails {
+  width: 50vw;
+  background-color: whitesmoke;
+  padding: 0 2vw;
+  padding-bottom: 3vh;
+  color: #202020;
+  align-self: center;
+  border-radius: 40px;
+}
+
+.taskDetails h1 {
+  color: #202020;
+}
+
+.taskDetails p {
+  font-size: large;
+}
+
+.taskDetails .buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 12vw;
+  margin-bottom: 2vh;
+}
+
+.taskDetails .buttons button {
+  background-color: #202020;
+  color: whitesmoke;
+  border-radius: 5px;
+  font-size: medium;
+  padding: 0.4vh 0.6vw;
+  margin-bottom: 2vh;
+}
+
+.taskDetails .buttons button:hover {
+  background-color: whitesmoke;
+  color: #202020;
+}
+
+.taskDetails .buttons button:active {
+  transform: translateY(5px);
+}
+
+.taskDetails a {
+  font-size: medium;
+  text-decoration: none;
+  color: whitesmoke;
+  padding: 1vh 1vw;
+  background-color: #aa2525;
+  border-radius: 10px;
+}
+
+.taskDetails a:hover {
+  background-color: #404040;
+  color: whitesmoke;
+}
+
+form {
+  width: 40vw;
+  background-color: whitesmoke;
+  padding: 2vh 2vw;
+  padding-bottom: 3vh;
+  color: #202020;
+  align-self: center;
+  border-radius: 40px;
+}
+
+form div {
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  margin: 2vh 0vw;
+}
+
+form label {
+  font-weight: 600;
+  margin-right: 0.5vw;
+}
+
+form button {
+  background-color: #202020;
+  color: whitesmoke;
+  border-radius: 5px;
+  font-size: medium;
+  padding: 0.4vh 0.6vw;
+}
+
+form button:hover {
+  background-color: whitesmoke;
+  color: #202020;
+}
+
+form button:active {
+  transform: translateY(5px);
+}

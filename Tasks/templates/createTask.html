@@ -2,10 +2,9 @@
 
 <h1>Create Task</h1>
 
-{{ error }}
-
 <form action="/tasks/create/" method="post">
-  {% csrf_token %} {{ form.as_p }}
+  <h3>{{ error }}</h3>
+  {% csrf_token %} {{ form.as_div }}
   <button>Save</button>
 </form>
 

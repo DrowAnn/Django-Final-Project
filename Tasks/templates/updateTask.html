@@ -2,10 +2,9 @@
 
 <h1>Update Task</h1>
 
-<h3>{{ error }}</h3>
-
 <form method="post">
-  {% csrf_token %} {{ form.as_p }}
+  <h3>{{ error }}</h3>
+  {% csrf_token %} {{ form.as_div }}
   <button>Update</button>
 </form>
 

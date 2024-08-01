@@ -102,7 +102,7 @@ def updateTask(request, taskId):
 def completeTask(request, taskId):
     if (request.method == "POST"):
         task = get_object_or_404(Task, pk=taskId, user=request.user)
-        task.completed = True
+        task.completed = not task.completed
         task.completedDate = timezone.now()
         task.save()
         return HttpResponseRedirect(reverse('tasksTaskDetails', kwargs={'taskId': taskId}))

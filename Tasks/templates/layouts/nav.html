@@ -1,8 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
     <title>Django CRUD Application</title>
   </head>
   <body>
@@ -11,6 +13,8 @@
         <li>
           <a href="/">Home</a>
         </li>
+        </li>
+        {% if user.is_authenticated %}
         <li>
           <a href="{% url 'tasksTasks' %}">Tasks</a>
         </li>
@@ -22,8 +26,6 @@
         </li>
         <li>
           <a href="{% url 'tasksCreateTask' %}">Create Tasks</a>
-        </li>
-        {% if user.is_authenticated %}
         <li>
           <a href="{% url 'tasksLogout' %}">Log Out</a>
         </li>

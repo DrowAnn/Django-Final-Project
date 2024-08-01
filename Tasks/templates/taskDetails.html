@@ -2,25 +2,36 @@
 
 <h1>Task Details</h1>
 
-<ul>
-  <li>
-    <h1>{{ task.title }}</h1>
-    <p>{{ task.createdDate }}</p>
-    <p>{{ task.description }}</p>
-    <p>{{ task.important }}</p>
-    <p>{{ task.completed }}</p>
-    <p>{{ task.completedDate }}</p>
-    <h3>Created by {{ task.user.username }}</h3>
+<div class="taskDetails">
+  <h1>{{ task.title }}</h1>
+  <p><strong>Creation date:</strong> {{ task.createdDate }}</p>
+  <p><strong>Description: </strong>{{ task.description }}</p>
+  {% if task.important == True %}
+  <p><strong>Level of Importance:</strong> 🔴</p>
+  {% elif task.important == False %}
+  <p><strong>Level of Importance:</strong> 🟡</p>
+  {% else %}
+  <p><strong>Level of Importance:</strong> Undefined Importance</p>
+  {% endif %}
+  <p><strong>Completed: </strong>{{ task.completed }}</p>
+  {% if task.completed == True %}
+  <p><strong>Completed Date: </strong>{{ task.completedDate }}</p>
+  {% endif %}
+  <h3>Created by {{ task.user.username }}</h3>
+  <div class="buttons">
     <form action="{% url 'tasksCompleteTask' task.id %}" method="post">
-      {% csrf_token %}
+      {% csrf_token %} {% if task.completed == True %}
+      <button>Pending</button>
+      {% else %}
       <button>Complete</button>
+      {% endif %}
     </form>
     <form action="{% url 'tasksDeleteTask' task.id %}" method="post">
       {% csrf_token %}
       <button>Delete</button>
     </form>
-    <a href="{% url 'tasksTasks' %}">Back to Tasks</a>
-  </li>
-</ul>
+  </div>
+  <a href="{% url 'tasksTasks' %}">Back to Tasks</a>
+</div>
 
 {% endblock %}
