@@ -56,7 +56,7 @@ def log_out(request):
 @login_required
 def tasks(request):
     tasksList = Task.objects.filter(user=request.user)
-    return render(request, 'tasks.html', {'tasks': tasksList})
+    return render(request, 'tasks.html', {'tasks': tasksList, 'titleDescription': 'All '})
 
 
 @login_required
@@ -123,10 +123,10 @@ def deleteTask(request, taskId):
 @login_required
 def completedTasksList(request):
     tasksList = Task.objects.filter(user=request.user, completed=True)
-    return render(request, 'tasks.html', {'tasks': tasksList})
+    return render(request, 'tasks.html', {'tasks': tasksList, 'titleDescription': 'Completed'})
 
 
 @login_required
 def pendingTasksList(request):
     tasksList = Task.objects.filter(user=request.user, completed=False)
-    return render(request, 'tasks.html', {'tasks': tasksList})
+    return render(request, 'tasks.html', {'tasks': tasksList, 'titleDescription': 'Pending'})
